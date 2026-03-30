@@ -110,6 +110,146 @@
       .logo-img{width:58px;height:58px}
       .logo-text{font-size:24px}
     }
+  
+    input[type="date"] {
+      width:100%;
+      background:#0a0818;
+      border:1px solid #2a1f4a;
+      color:#e0d8ff;
+      border-radius:12px;
+      padding:13px 15px;
+      font-size:16px;
+      font-family:"DM Sans";
+      color-scheme:dark;
+      -webkit-appearance:none;
+      appearance:none;
+    }
+    input[type="date"]:focus {
+      border-color:#c84bff88;
+      outline:none;
+    }
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      filter: invert(0.7) sepia(1) saturate(5) hue-rotate(230deg);
+      cursor:pointer;
+      font-size:18px;
+    }
+</style>
+
+  <script>
+    // Forzar idioma español en inputs de fecha
+    document.addEventListener("DOMContentLoaded", function() {
+      function setSpanishDates() {
+        document.querySelectorAll('input[type="date"]').forEach(input => {
+          input.setAttribute("lang", "es");
+        });
+      }
+      setSpanishDates();
+      const observer = new MutationObserver(setSpanishDates);
+      observer.observe(document.body, {childList: true, subtree: true});
+    });
+  </script>
+
+</style>s",sans-serif;min-height:100vh;padding-bottom:60px}
+    ::-webkit-scrollbar{width:4px}::-webkit-scrollbar-thumb{background:#2a1f4a;border-radius:4px}
+
+    .header{background:linear-gradient(135deg,#0a0818,#0f0d24);border-bottom:1px solid var(--border);padding:20px 24px 0;position:sticky;top:0;z-index:100}
+    .header-inner{max-width:960px;margin:0 auto}
+    .header-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+    .logo-area{display:flex;align-items:center;gap:16px}
+    .logo-img{width:70px;height:70px;border-radius:18px;border:2.5px solid var(--neon);object-fit:cover;box-shadow:0 0 24px #c84bff66}
+    .logo-text{font-family:"Rajdhani",sans-serif;font-size:30px;font-weight:700;color:#fff;letter-spacing:1.5px;line-height:1.1}
+    .logo-sub{font-size:14px;color:var(--muted);font-family:"DM Sans";font-weight:400;margin-top:2px}
+
+    .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:16px}
+    .stat{background:#0d0d1e;border:1px solid var(--border);border-radius:14px;padding:14px 16px}
+    .stat-lbl{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px}
+    .stat-val{font-family:"Rajdhani";font-size:26px;font-weight:700}
+
+    .tabs{display:flex;gap:2px}
+    .tab{background:none;border:none;cursor:pointer;padding:11px 18px;font-size:15px;font-weight:600;color:var(--muted);border-bottom:2px solid transparent;font-family:"DM Sans";transition:all .2s}
+    .tab.active{color:#fff;border-color:var(--neon)}
+
+    .content{max-width:960px;margin:0 auto;padding:0 20px}
+
+    .btn-primary{background:linear-gradient(135deg,var(--neon),var(--purple));color:#fff;border:none;border-radius:12px;padding:13px 20px;font-weight:700;font-size:15px;cursor:pointer;font-family:"DM Sans";transition:opacity .15s,transform .15s;box-shadow:0 4px 16px #c84bff33}
+    .btn-primary:hover{opacity:.85;transform:translateY(-1px)}
+    .btn-primary:disabled{opacity:.5;cursor:not-allowed}
+    .btn-sec{background:none;color:var(--muted);border:1px solid var(--border);border-radius:12px;padding:13px 20px;font-weight:600;font-size:15px;cursor:pointer;font-family:"DM Sans"}
+
+    .form-box{background:var(--bg2);border:1px solid var(--border);border-radius:18px;padding:26px;margin-top:20px;animation:fadeIn .3s ease}
+    .form-title{font-family:"Rajdhani";font-size:22px;font-weight:700;color:#fff;margin-bottom:16px;letter-spacing:.5px}
+    .form-section{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--neon);margin:16px 0 10px;padding-bottom:5px;border-bottom:1px solid #1e1535}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .fg label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:.8px}
+    .fg input,.fg select,.fg textarea{width:100%;background:#0a0818;border:1px solid var(--border);color:var(--text);border-radius:12px;padding:13px 15px;font-size:16px;font-family:"DM Sans";color-scheme:dark;transition:border-color .2s}
+    .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:#c84bff88;outline:none}
+    .fg textarea{resize:vertical;min-height:80px}
+    .form-actions{display:flex;gap:12px;margin-top:20px}
+
+    .filters{display:flex;gap:10px;margin:18px 0 14px;flex-wrap:wrap}
+    .filters input,.filters select{background:var(--bg2);border:1px solid var(--border);color:var(--text);border-radius:12px;padding:11px 15px;font-size:15px;font-family:"DM Sans";color-scheme:dark}
+    .filters input{flex:1;min-width:180px}
+
+    .cc{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:16px 20px;margin-bottom:11px;transition:background .15s;animation:fadeIn .25s ease;cursor:pointer}
+    .cc:hover{background:#100f22}
+    .cc.aw{border-color:#ffaa0055}.cc.ae{border-color:#ff4d4d44}
+    .cc.paid{border-left:4px solid #4dff91}.cc.pending{border-left:4px solid #ffaa00}.cc.late{border-left:4px solid #ff4d4d}
+    .cc-top{display:flex;align-items:center;gap:14px}
+    .svc-ic{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;flex-shrink:0}
+    .cc-info{flex:1;min-width:0}
+    .cc-name{font-weight:700;font-size:17px;color:#fff;display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:5px}
+    .cc-meta{font-size:14px;color:var(--muted);display:flex;gap:12px;flex-wrap:wrap}
+    .cc-acts{display:flex;gap:8px;flex-shrink:0}
+    .be{background:#16123a;color:#aaa;border:none;border-radius:10px;padding:9px 13px;font-size:14px;cursor:pointer}
+    .bd{background:#1a0f0f;color:#ff4d4d;border:1px solid #ff4d4d33;border-radius:10px;padding:9px 13px;font-size:14px;cursor:pointer}
+    .cc-extra{margin-top:12px;padding-top:12px;border-top:1px solid #1e1535;display:none;font-size:14px;color:var(--muted);grid-template-columns:repeat(3,1fr);gap:10px}
+    .ei span{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.7px;margin-bottom:3px;color:#3d3060}
+    .ei strong{color:var(--text);font-weight:600;font-size:15px}
+
+    .badge{padding:4px 11px;border-radius:20px;font-size:12px;font-weight:700;letter-spacing:.8px}
+    .b-ok{background:#0a1a0f;color:#4dff91;border:1px solid #4dff9133}
+    .b-warn{background:#1a1200;color:#ffaa00;border:1px solid #ffaa0055}
+    .b-exp{background:#1a0808;color:#ff4d4d;border:1px solid #ff4d4d33}
+    .b-paid{background:#0a1a0f;color:#4dff91;border:1px solid #4dff9133}
+    .b-pend{background:#1a1200;color:#ffaa00;border:1px solid #ffaa0055}
+    .b-late{background:#1a0808;color:#ff4d4d;border:1px solid #ff4d4d33}
+
+    .as-title{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin:22px 0 12px}
+    .ac{border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;margin-bottom:10px;animation:fadeIn .25s ease}
+    .ac.warn{background:#1a1200;border:1px solid #ffaa0044}
+    .ac.exp{background:#1a0808;border:1px solid #ff4d4d44}
+
+    .modal-ov{position:fixed;inset:0;background:#000000bb;display:flex;align-items:center;justify-content:center;z-index:1000;padding:20px}
+    .modal{background:var(--bg2);border:1px solid var(--border);border-radius:18px;padding:28px;max-width:360px;width:100%}
+    .modal h3{font-size:20px;font-weight:700;color:#fff;margin-bottom:10px}
+    .modal p{font-size:15px;color:var(--muted);margin-bottom:24px}
+    .modal-acts{display:flex;gap:12px}
+    .btn-del-c{background:#ff4d4d22;color:#ff4d4d;border:1px solid #ff4d4d55;border-radius:12px;padding:12px 20px;font-weight:700;cursor:pointer;flex:1;font-family:"DM Sans";font-size:15px}
+
+    .empty{text-align:center;padding:70px 20px;color:var(--muted)}
+    .empty-ic{font-size:50px;margin-bottom:14px}
+    .empty h3{font-size:18px;font-weight:600;color:#554488;margin-bottom:8px}
+    .empty p{font-size:15px}
+
+    .loading-screen{position:fixed;inset:0;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;transition:opacity .5s}
+    .loading-screen.hide{opacity:0;pointer-events:none}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .spinner{width:44px;height:44px;border:3px solid #2a1f4a;border-top-color:var(--neon);border-radius:50%;animation:spin .8s linear infinite;margin-bottom:18px}
+    .loading-txt{font-family:"Rajdhani";font-size:22px;color:var(--neon);font-weight:700;letter-spacing:1px}
+    .loading-sub{font-size:14px;color:var(--muted);margin-top:8px}
+
+    .toast{position:fixed;bottom:24px;right:24px;background:#1a1035;border:1px solid var(--neon);color:#fff;padding:14px 22px;border-radius:14px;font-size:15px;font-weight:600;z-index:9999;animation:fadeIn .3s ease;box-shadow:0 8px 24px #c84bff22}
+    .cloud-badge{font-size:11px;background:#0a1a0f;color:#4dff91;border:1px solid #4dff9133;padding:3px 10px;border-radius:20px;font-weight:700;letter-spacing:.5px}
+
+    @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    @media(max-width:600px){
+      .stats{grid-template-columns:repeat(3,1fr)}
+      .form-grid{grid-template-columns:1fr}
+      .cc-extra{grid-template-columns:1fr 1fr}
+      .stat-val{font-size:20px}
+      .logo-img{width:58px;height:58px}
+      .logo-text{font-size:24px}
+    }
   </style>
 
   <script>
@@ -129,7 +269,7 @@
 <style>
 /* DATE PICKER PERSONALIZADO */
 .dp-wrap{position:relative;display:inline-block;width:100%}
-.dp-input{width:100%;background:#0a0818;border:1px solid #2a1f4a;color:#e0d8ff;border-radius:12px;padding:13px 15px;font-size:16px;font-family:"DM Sans";cursor:pointer;text-align:left;display:flex;align-items:center;justify-content:space-between;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.dp-input{width:100%;background:#0a0818;border:1px solid #2a1f4a;color:#e0d8ff;border-radius:12px;padding:13px 15px;font-size:16px;font-family:"DM Sans";cursor:pointer;text-align:left;display:flex;align-items:center;justify-content:space-between}
 .dp-input:focus{border-color:#c84bff88;outline:none}
 .dp-cal{position:fixed;z-index:9999;background:#0f0d24;border:1px solid #2a1f4a;border-radius:14px;padding:10px;box-shadow:0 8px 32px #00000088;min-width:240px;display:none}
 .dp-cal.open{display:block}
@@ -140,7 +280,7 @@
 .dp-days-header{display:grid;grid-template-columns:repeat(7,1fr);gap:1px;margin-bottom:4px}
 .dp-day-name{text-align:center;font-size:10px;font-weight:700;color:#6655aa;padding:2px;text-transform:uppercase}
 .dp-days{display:grid;grid-template-columns:repeat(7,1fr);gap:1px}
-.dp-day{text-align:center;padding:5px 2px;border-radius:6px;cursor:pointer;font-size:12px;color:#e0d8ff;border:none;background:none;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.dp-day{text-align:center;padding:5px 2px;border-radius:6px;cursor:pointer;font-size:12px;color:#e0d8ff;border:none;background:none}
 .dp-day:hover{background:#2a1f4a}
 .dp-day.today{border:1px solid #c84bff;color:#c84bff}
 .dp-day.selected{background:linear-gradient(135deg,#c84bff,#8b2be2);color:#fff;font-weight:700}
@@ -159,199 +299,7 @@
 .dp-btn:hover{background:#2a1f4a}
 </style>
 
-<script>
-// ─── CUSTOM DATE PICKER EN ESPAÑOL ────────────────────────
-const MESES=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
-const DIAS=["Lu","Ma","Mi","Ju","Vi","Sa","Do"];
 
-class DatePickerES {
-  constructor(inputId, displayId){
-    this.inputId = inputId;    // hidden input con valor YYYY-MM-DD
-    this.displayId = displayId; // div visible
-    this.value = null;
-    this.viewDate = new Date();
-    this.mode = "days"; // days | months | years
-    this.cal = null;
-    this.init();
-  }
-
-  init(){
-    const display = document.getElementById(this.displayId);
-    const openHandler = (e)=>{
-      e.preventDefault();
-      e.stopPropagation();
-      if(this.cal && this.cal.parentNode){ this.close(); } else { this.open(display); }
-    };
-    display.addEventListener("click", openHandler);
-    display.addEventListener("touchend", openHandler);
-    document.addEventListener("click", ()=> this.close());
-    document.addEventListener("touchend", (e)=>{
-      if(this.cal && !this.cal.contains(e.target) && !display.contains(e.target)){
-        this.close();
-      }
-    });
-  }
-
-  open(anchor){
-    if(this.cal) this.cal.remove();
-    this.mode = "days";
-    this.cal = document.createElement("div");
-    this.cal.className = "dp-cal open";
-    document.body.appendChild(this.cal);
-    // Position
-    const rect = anchor.getBoundingClientRect();
-    this.cal.style.top = (rect.bottom + window.scrollY + 6) + "px";
-    this.cal.style.left = rect.left + "px";
-    this.cal.style.width = Math.max(rect.width, 280) + "px";
-    this.cal.addEventListener("click", e=>e.stopPropagation());
-    this.cal.addEventListener("touchend", e=>e.stopPropagation());
-    this.render();
-  }
-
-  close(){
-    if(this.cal){ this.cal.remove(); this.cal=null; }
-  }
-
-  render(){
-    if(!this.cal) return;
-    if(this.mode==="days") this.renderDays();
-    else if(this.mode==="months") this.renderMonths();
-    else this.renderYears();
-  }
-
-  renderDays(){
-    const y=this.viewDate.getFullYear(), m=this.viewDate.getMonth();
-    const today=new Date(); today.setHours(0,0,0,0);
-    const firstDay=new Date(y,m,1);
-    let startDow=firstDay.getDay()-1; if(startDow<0) startDow=6;
-    const daysInMonth=new Date(y,m+1,0).getDate();
-    const daysInPrev=new Date(y,m,0).getDate();
-
-    let daysHTML="";
-    for(let i=0;i<startDow;i++){
-      daysHTML+=`<button class="dp-day other-month" onclick="">${daysInPrev-startDow+1+i}</button>`;
-    }
-    for(let d=1;d<=daysInMonth;d++){
-      const date=new Date(y,m,d);
-      const isToday=date.getTime()===today.getTime();
-      const isSel=this.value&&this.value.getFullYear()===y&&this.value.getMonth()===m&&this.value.getDate()===d;
-      daysHTML+=`<button class="dp-day${isToday?" today":""}${isSel?" selected":""}" data-d="${d}">${d}</button>`;
-    }
-    const remaining=(7-(startDow+daysInMonth)%7)%7;
-    for(let i=1;i<=remaining;i++){
-      daysHTML+=`<button class="dp-day other-month">${i}</button>`;
-    }
-
-    this.cal.innerHTML=`
-      <div class="dp-header">
-        <button class="dp-nav" id="dp-prev">‹</button>
-        <div class="dp-title" id="dp-title">${MESES[m]} ${y}</div>
-        <button class="dp-nav" id="dp-next">›</button>
-      </div>
-      <div class="dp-days-header">${DIAS.map(d=>`<div class="dp-day-name">${d}</div>`).join("")}</div>
-      <div class="dp-days">${daysHTML}</div>
-      <div class="dp-footer">
-        <button class="dp-btn" id="dp-clear">Limpiar</button>
-        <button class="dp-btn" id="dp-today">Hoy</button>
-      </div>`;
-
-    this.cal.querySelectorAll(".dp-days .dp-day[data-d]").forEach(btn=>{
-      const dayHandler=(e)=>{e.preventDefault();const d=parseInt(btn.dataset.d);this.select(new Date(y,m,d));};
-      btn.addEventListener("click", dayHandler);
-      btn.addEventListener("touchend", dayHandler);
-    });
-    this.cal.querySelector("#dp-prev").addEventListener("click",()=>{this.viewDate=new Date(y,m-1,1);this.render()});
-    this.cal.querySelector("#dp-next").addEventListener("click",()=>{this.viewDate=new Date(y,m+1,1);this.render()});
-    this.cal.querySelector("#dp-title").addEventListener("click",()=>{this.mode="months";this.render()});
-    this.cal.querySelector("#dp-clear").addEventListener("click",()=>this.clear());
-    this.cal.querySelector("#dp-today").addEventListener("click",()=>this.select(new Date()));
-  }
-
-  renderMonths(){
-    const y=this.viewDate.getFullYear();
-    const selM=this.value?this.value.getMonth():-1;
-    const selY=this.value?this.value.getFullYear():-1;
-    this.cal.innerHTML=`
-      <div class="dp-header">
-        <button class="dp-nav" id="dp-prev">‹</button>
-        <div class="dp-title" id="dp-title">${y}</div>
-        <button class="dp-nav" id="dp-next">›</button>
-      </div>
-      <div class="dp-months">${MESES.map((mes,i)=>`<button class="dp-month${i===selM&&y===selY?" selected":""}" data-m="${i}">${mes.substring(0,3)}</button>`).join("")}</div>`;
-    this.cal.querySelectorAll(".dp-month").forEach(btn=>{
-      btn.addEventListener("click",()=>{this.viewDate=new Date(y,parseInt(btn.dataset.m),1);this.mode="days";this.render()});
-    });
-    this.cal.querySelector("#dp-prev").addEventListener("click",()=>{this.viewDate=new Date(y-1,0,1);this.render()});
-    this.cal.querySelector("#dp-next").addEventListener("click",()=>{this.viewDate=new Date(y+1,0,1);this.render()});
-    this.cal.querySelector("#dp-title").addEventListener("click",()=>{this.mode="years";this.render()});
-  }
-
-  renderYears(){
-    const base=this.viewDate.getFullYear();
-    const selY=this.value?this.value.getFullYear():-1;
-    const years=Array.from({length:16},(_,i)=>base-8+i);
-    this.cal.innerHTML=`
-      <div class="dp-header">
-        <button class="dp-nav" id="dp-prev">‹</button>
-        <div class="dp-title">${years[0]}–${years[years.length-1]}</div>
-        <button class="dp-nav" id="dp-next">›</button>
-      </div>
-      <div class="dp-years">${years.map(y=>`<button class="dp-year${y===selY?" selected":""}" data-y="${y}">${y}</button>`).join("")}</div>`;
-    this.cal.querySelectorAll(".dp-year").forEach(btn=>{
-      btn.addEventListener("click",()=>{this.viewDate=new Date(parseInt(btn.dataset.y),this.viewDate.getMonth(),1);this.mode="months";this.render()});
-    });
-    this.cal.querySelector("#dp-prev").addEventListener("click",()=>{this.viewDate=new Date(base-16,0,1);this.render()});
-    this.cal.querySelector("#dp-next").addEventListener("click",()=>{this.viewDate=new Date(base+16,0,1);this.render()});
-  }
-
-  select(date){
-    this.value=date;
-    this.viewDate=new Date(date);
-    const y=date.getFullYear(), m=String(date.getMonth()+1).padStart(2,"0"), d=String(date.getDate()).padStart(2,"0");
-    const iso=`${y}-${m}-${d}`;
-    // Set hidden input value
-    const hidden=document.getElementById(this.inputId);
-    if(hidden){ hidden.value=iso; hidden.dispatchEvent(new Event("change")); }
-    // Update display
-    const display=document.getElementById(this.displayId);
-    if(display){ display.querySelector(".dp-val").textContent=`${d}/${m}/${y}`; }
-    this.close();
-  }
-
-  clear(){
-    this.value=null;
-    const hidden=document.getElementById(this.inputId);
-    if(hidden){ hidden.value=""; hidden.dispatchEvent(new Event("change")); }
-    const display=document.getElementById(this.displayId);
-    if(display){ display.querySelector(".dp-val").textContent="dd/mm/aaaa"; }
-    this.close();
-  }
-
-  setValue(isoStr){
-    if(!isoStr){this.value=null;return;}
-    const parts=isoStr.split("-");
-    if(parts.length===3){
-      this.value=new Date(parseInt(parts[0]),parseInt(parts[1])-1,parseInt(parts[2]));
-      this.viewDate=new Date(this.value);
-      const display=document.getElementById(this.displayId);
-      if(display){
-        const d=String(this.value.getDate()).padStart(2,"0");
-        const m=String(this.value.getMonth()+1).padStart(2,"0");
-        const y=this.value.getFullYear();
-        display.querySelector(".dp-val").textContent=`${d}/${m}/${y}`;
-      }
-    }
-  }
-}
-
-// Initialize pickers after DOM ready
-let dpInicio, dpFin;
-document.addEventListener("DOMContentLoaded", function(){
-  dpInicio    = new DatePickerES("fI","dpInicio");
-  dpFin       = new DatePickerES("fF","dpFin");
-
-});
-</script>
 </head>
 <body>
 
@@ -407,24 +355,8 @@ document.addEventListener("DOMContentLoaded", function(){
       <div class="fg"><label>Plan contratado</label>
         <select id="fPl"><option>1 perfil</option><option>Cuenta completa</option><option>Dúo</option><option>Familiar</option><option>Premium</option><option>Básico</option></select>
       </div>
-      <div class="fg"><label>Fecha de inicio *</label>
-        <input type="hidden" id="fI"/>
-        <div class="dp-wrap">
-          <div class="dp-input" id="dpInicio" tabindex="0">
-            <span class="dp-val">dd/mm/aaaa</span>
-            <span style="color:#6655aa;font-size:18px">📅</span>
-          </div>
-        </div>
-      </div>
-      <div class="fg"><label>Fecha de vencimiento *</label>
-        <input type="hidden" id="fF"/>
-        <div class="dp-wrap">
-          <div class="dp-input" id="dpFin" tabindex="0">
-            <span class="dp-val">dd/mm/aaaa</span>
-            <span style="color:#6655aa;font-size:18px">📅</span>
-          </div>
-        </div>
-      </div>
+      <div class="fg"><label>Fecha de inicio *</label><input id="fI" type="date"/></div>
+      <div class="fg"><label>Fecha de vencimiento *</label><input id="fF" type="date"/></div>
     </div>
     <div class="form-section">💰 Pago</div>
     <div class="form-grid">
@@ -659,7 +591,7 @@ onSnapshot(query(collection(db,COL)),(snapshot)=>{
 function clearF(){
   editId=null;
   ["fN","fC","fI","fF","fM","fOb"].forEach(id=>document.getElementById(id).value="");
-  if(dpInicio) dpInicio.clear(); if(dpFin) dpFin.clear();
+
   document.getElementById("fSv").value="Netflix";
   document.getElementById("fPl").value="1 perfil";
   document.getElementById("fMt").value="Yape";
@@ -675,8 +607,7 @@ window.startEdit=function(id){
   document.getElementById("fC").value=c.celular||"";
   document.getElementById("fI").value=c.inicio||"";
   document.getElementById("fF").value=c.fin||"";
-  if(dpInicio) dpInicio.setValue(c.inicio||"");
-  if(dpFin) dpFin.setValue(c.fin||"");
+
   document.getElementById("fM").value=c.monto||"";
   document.getElementById("fOb").value=c.obs||"";
 
